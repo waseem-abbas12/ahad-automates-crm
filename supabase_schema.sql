@@ -1,5 +1,5 @@
 -- =========================================================================
--- AHAD AUTOMATES CRM - COMPLETE POSTGRESQL / SUPABASE PRODUCTION SCHEMA
+-- WASEEM AUTOMATION CRM - COMPLETE POSTGRESQL / SUPABASE PRODUCTION SCHEMA
 -- =========================================================================
 
 -- Enable UUID extension

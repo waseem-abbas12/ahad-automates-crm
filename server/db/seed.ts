@@ -4,7 +4,7 @@ import { db, initDatabase } from './database.js';
 export function seedDatabase() {
   initDatabase();
 
-  const existingUser = db.prepare('SELECT id FROM users WHERE email = ?').get('demo@ahadautomates.com') as any;
+  const existingUser = db.prepare('SELECT id FROM users WHERE email = ?').get('waseem000094@gmail.com') as any;
   if (existingUser) {
     console.log('ℹ️ Database already seeded');
     return;
@@ -21,7 +21,7 @@ export function seedDatabase() {
     INSERT INTO users (id, email, password_hash, full_name, company_name)
     VALUES (?, ?, ?, ?, ?)
   `);
-  insertUser.run(userId, 'demo@ahadautomates.com', passwordHash, 'Ahad Automates', 'Ahad Automations Inc.');
+  insertUser.run(userId, 'waseem000094@gmail.com', passwordHash, 'Waseem Abbas', 'Waseem Automation Inc.');
 
   // 2. Profile Settings
   const insertProfile = db.prepare(`

@@ -42,5 +42,5 @@ app.use('/api/settings', authMiddleware as any, settingsRouter);
 app.use('/api/analytics', authMiddleware as any, analyticsRouter);
 
 app.listen(PORT, () => {
-  console.log(`🚀 Ahad Automates CRM Backend Server listening on http://127.0.0.1:${PORT}`);
+  console.log(`🚀 Waseem Automation CRM Backend Server listening on http://127.0.0.1:${PORT}`);
 });

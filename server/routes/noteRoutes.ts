@@ -23,7 +23,7 @@ noteRouter.post('/', (req: AuthenticatedRequest, res: Response) => {
   db.prepare(`
     INSERT INTO notes (id, user_id, lead_id, content, author_name)
     VALUES (?, ?, ?, ?, ?)
-  `).run(noteId, userId, lead_id, content, author_name || 'Ahad Automates');
+  `).run(noteId, userId, lead_id, content, author_name || 'Waseem Abbas');
 
   const created = db.prepare('SELECT * FROM notes WHERE id = ?').get(noteId);
   res.status(201).json(created);

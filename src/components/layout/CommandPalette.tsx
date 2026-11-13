@@ -160,7 +160,7 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
         {/* Footer info */}
         <div className="px-4 py-2 border-t border-border bg-muted/30 flex items-center justify-between text-xs text-muted-foreground">
           <span>Search or navigate effortlessly</span>
-          <span className="font-mono text-[10px]">Ahad Automates CRM</span>
+          <span className="font-mono text-[10px]">Waseem Automation CRM</span>
         </div>
       </div>
     </div>

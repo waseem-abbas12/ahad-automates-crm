@@ -10,9 +10,9 @@ export const initialProfile: ProfileSettings = {
   daily_target: 20,
   followup_interval_days: 2,
   monthly_target: 300,
-  userName: 'Ahad Automates',
-  userEmail: 'ahad@automatescrm.com',
-  companyName: 'Ahad Automations Inc.'
+  userName: 'Waseem Abbas',
+  userEmail: 'waseem000094@gmail.com',
+  companyName: 'Waseem Automation Inc.'
 };
 
 export const initialSettings: CustomSettings = {
@@ -546,21 +546,21 @@ export const initialNotes: Note[] = [
     id: 'note-1',
     lead_id: 'lead-1',
     content: 'Dr. Marcus Vance is the primary decision-maker. Receptionist mentioned best time to reach him is between 12:30 PM - 1:30 PM during lunch pause.',
-    author_name: 'Ahad Automates',
+    author_name: 'Waseem Abbas',
     created_at: subHours(5)
   },
   {
     id: 'note-2',
     lead_id: 'lead-3',
     content: 'Client currently uses Clio for practice management. We should demonstrate the Zapier/Webhook integration directly into Clio.',
-    author_name: 'Ahad Automates',
+    author_name: 'Waseem Abbas',
     created_at: subDays(1)
   },
   {
     id: 'note-3',
     lead_id: 'lead-6',
     content: 'Bradford wants pricing structure broken down into base implementation fee + monthly support tier.',
-    author_name: 'Ahad Automates',
+    author_name: 'Waseem Abbas',
     created_at: subDays(2)
   }
 ];

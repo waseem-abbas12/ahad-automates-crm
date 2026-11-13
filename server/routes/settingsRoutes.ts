@@ -14,9 +14,9 @@ settingsRouter.get('/', (req: AuthenticatedRequest, res: Response) => {
 
   res.json({
     profile: {
-      userName: user?.full_name || 'Ahad Automates',
-      userEmail: user?.email || 'demo@ahadautomates.com',
-      companyName: user?.company_name || 'Ahad Automations Inc.',
+      userName: user?.full_name || 'Waseem Abbas',
+      userEmail: user?.email || 'waseem000094@gmail.com',
+      companyName: user?.company_name || 'Waseem Automation Inc.',
       daily_target: profile?.daily_target || 20,
       followup_interval_days: profile?.followup_interval_days || 2,
       monthly_target: profile?.monthly_target || 300

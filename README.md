@@ -1,4 +1,4 @@
-# Ahad Automates CRM — Complete Full-Stack Outbound Pipeline
+# Waseem Automation CRM — Complete Full-Stack Outbound Pipeline
 
 A 100% pixel-to-pixel, button-to-button clone of [Ahad Automates CRM](https://ahadautomatescrm.lovable.app/dashboard), equipped with a dedicated **Backend REST API Server**, **Real Relational Database (SQLite with WAL & Supabase PostgreSQL Schema)**, and modern **React 18 + Vite + Tailwind CSS** frontend.
 

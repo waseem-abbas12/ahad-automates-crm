@@ -82,7 +82,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
             </div>
             <div className="flex flex-col">
               <div className="flex items-center gap-1.5">
-                <span className="font-bold tracking-tight text-base text-foreground">Ahad Automates</span>
+                <span className="font-bold tracking-tight text-base text-foreground">Waseem Automation</span>
                 <span className="px-1.5 py-0.2 text-[10px] font-semibold uppercase tracking-wider rounded bg-primary/10 text-primary border border-primary/20">
                   CRM
                 </span>

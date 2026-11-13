@@ -10,7 +10,7 @@ export const AuthView: React.FC<AuthViewProps> = ({ onLoginSuccess }) => {
   const [tab, setTab] = useState<'signin' | 'signup' | 'reset'>('signin');
 
   // Sign In state
-  const [email, setEmail] = useState('demo@ahadautomates.com');
+  const [email, setEmail] = useState('waseem000094@gmail.com');
   const [password, setPassword] = useState('password123');
 
   // Sign Up state
@@ -29,7 +29,7 @@ export const AuthView: React.FC<AuthViewProps> = ({ onLoginSuccess }) => {
       toast.error('Please enter email and password');
       return;
     }
-    toast.success('Welcome back, Ahad Automates!');
+    toast.success('Welcome back, Waseem Automation!');
     onLoginSuccess();
   };
 
@@ -63,7 +63,7 @@ export const AuthView: React.FC<AuthViewProps> = ({ onLoginSuccess }) => {
           </div>
           <div>
             <div className="flex items-center justify-center gap-1.5 mt-2">
-              <h1 className="text-xl font-extrabold text-foreground tracking-tight">Ahad Automates</h1>
+              <h1 className="text-xl font-extrabold text-foreground tracking-tight">Waseem Automation</h1>
               <span className="px-1.5 py-0.2 text-[10px] font-semibold uppercase rounded bg-primary/10 text-primary border border-primary/20">
                 CRM
               </span>

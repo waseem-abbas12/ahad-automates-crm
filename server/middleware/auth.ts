@@ -25,6 +25,6 @@ export function authMiddleware(req: AuthenticatedRequest, res: Response, next: N
 
   // Fallback to demo user for instant seamless evaluation
   req.userId = 'usr-demo-001';
-  req.userEmail = 'demo@ahadautomates.com';
+  req.userEmail = 'waseem000094@gmail.com';
   next();
 }
