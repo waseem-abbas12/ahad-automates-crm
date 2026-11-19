@@ -1,10 +1,22 @@
-﻿import React, { useState } from 'react';
-import { ShieldCheck, MapPin, Menu, X, ArrowRight, MessageSquare } from 'lucide-react';
+﻿import React, { useState, useEffect } from 'react';
+import { ShieldCheck, MapPin, Menu, X, ArrowRight, MessageSquare, Phone } from 'lucide-react';
 import { Link, useRouter } from '../context/RouterContext';
 
 export const Header: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { currentPath } = useRouter();
+
+  // Prevent background scroll when mobile menu is open
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [mobileMenuOpen]);
 
   const navLinks = [
     { label: 'Home', path: '/' },
@@ -20,46 +32,47 @@ export const Header: React.FC = () => {
 
   return (
     <header className="sticky top-0 z-50 w-full bg-[#07090E]/95 backdrop-blur-xl border-b border-white/10 transition-all">
-      {/* Top Advisory Ticker */}
-      <div className="bg-gradient-to-r from-[#991B1B] via-[#DC2626] to-[#991B1B] text-white text-xs font-medium py-1.5 px-4">
-        <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2">
-          <div className="flex items-center gap-2">
-            <span className="inline-block w-2 h-2 rounded-full bg-white animate-pulse" />
-            <span className="font-semibold tracking-wide uppercase">Spring / Fall 2025 Intake:</span>
-            <span className="hidden sm:inline text-red-100">43 MOE-Approved English Medium Medical Universities Enrollment Live</span>
+      {/* Top Advisory Ticker - Mobile Optimized */}
+      <div className="bg-gradient-to-r from-[#991B1B] via-[#DC2626] to-[#991B1B] text-white text-[11px] sm:text-xs font-medium py-1.5 px-3 sm:px-4">
+        <div className="max-w-7xl mx-auto flex items-center justify-between gap-2">
+          <div className="flex items-center gap-1.5 truncate">
+            <span className="inline-block w-2 h-2 rounded-full bg-white animate-pulse flex-shrink-0" />
+            <span className="font-bold tracking-wide uppercase text-[10px] sm:text-xs flex-shrink-0">Spring/Fall 2025:</span>
+            <span className="truncate text-red-100">43 MOE English Medical Colleges Open</span>
           </div>
-          <div className="flex items-center gap-4 text-xs">
-            <span className="flex items-center gap-1 text-red-100">
-              <ShieldCheck className="w-3.5 h-3.5" /> PM&DC 2025 Compliant
+          <div className="flex items-center gap-3 text-[10px] sm:text-xs flex-shrink-0">
+            <span className="flex items-center gap-1 text-red-100 font-semibold">
+              <ShieldCheck className="w-3.5 h-3.5" /> PM&DC
             </span>
             <span className="hidden md:flex items-center gap-1 text-red-100">
-              <MapPin className="w-3.5 h-3.5" /> Lahore • Islamabad • Changsha (China)
+              <MapPin className="w-3.5 h-3.5" /> Lahore • Islamabad • China
             </span>
           </div>
         </div>
       </div>
 
       {/* Main Navbar */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16 sm:h-20">
+          
           {/* Logo & Corporate Identity */}
-          <Link to="/" className="flex items-center gap-3 group">
-            <div className="relative w-12 h-12 flex-shrink-0 rounded-lg overflow-hidden border border-red-500/30 group-hover:border-red-500/80 transition-colors shadow-lg shadow-red-900/20 bg-black">
+          <Link to="/" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-2 sm:gap-3 group min-w-0">
+            <div className="relative w-10 h-10 sm:w-12 sm:h-12 flex-shrink-0 rounded-lg overflow-hidden border border-red-500/30 group-hover:border-red-500/80 transition-colors shadow-lg shadow-red-900/20 bg-black">
               <img 
                 src="/logo.png" 
                 alt="Humayl Consultants Logo" 
                 className="w-full h-full object-contain p-0.5 transform group-hover:scale-105 transition-transform duration-300" 
               />
             </div>
-            <div className="flex flex-col">
-              <div className="flex items-baseline gap-1.5">
-                <span className="brand-font text-xl md:text-2xl font-bold tracking-wider text-white">HUMAYL</span>
-                <span className="text-xs md:text-sm font-semibold tracking-widest text-red-500 uppercase">CONSULTANTS</span>
+            <div className="flex flex-col min-w-0">
+              <div className="flex items-baseline gap-1 sm:gap-1.5">
+                <span className="brand-font text-lg sm:text-2xl font-black tracking-wider text-white">HUMAYL</span>
+                <span className="text-[10px] sm:text-sm font-bold tracking-widest text-red-500 uppercase">CONSULTANTS</span>
               </div>
-              <div className="flex items-center gap-1.5">
-                <span className="text-[10px] tracking-wider text-slate-400 font-medium uppercase">SMC (PVT) LIMITED</span>
-                <span className="text-slate-600">•</span>
-                <span className="text-[10px] tracking-wide text-red-400/90 font-medium">Overseas Educational Advisory</span>
+              <div className="flex items-center gap-1 text-[9px] sm:text-[10px] text-slate-400 font-medium truncate">
+                <span className="uppercase">SMC (PVT) LTD</span>
+                <span className="text-slate-600 hidden xs:inline">•</span>
+                <span className="text-red-400/90 hidden sm:inline">Overseas Educational Advisory</span>
               </div>
             </div>
           </Link>
@@ -81,7 +94,7 @@ export const Header: React.FC = () => {
             ))}
           </nav>
 
-          {/* Action Hub */}
+          {/* Desktop Action Hub */}
           <div className="hidden sm:flex items-center gap-3">
             <a 
               href="https://wa.me/923000000000?text=Assalam-o-Alaikum%20Humayl%20Team%2C%20I%20want%20to%20apply%20for%20China%20Admissions%202025" 
@@ -102,45 +115,68 @@ export const Header: React.FC = () => {
             </Link>
           </div>
 
-          {/* Mobile menu button */}
-          <button 
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="xl:hidden p-2 text-slate-400 hover:text-white"
-          >
-            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
+          {/* Mobile Action + Hamburger */}
+          <div className="flex xl:hidden items-center gap-2">
+            <a 
+              href="https://wa.me/923000000000"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="WhatsApp"
+              className="p-2 rounded-lg bg-emerald-950/40 border border-emerald-500/30 text-emerald-400 sm:hidden"
+            >
+              <MessageSquare className="w-4 h-4" />
+            </a>
+
+            <button 
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-label="Toggle menu"
+              className="p-2.5 rounded-xl bg-[#141B26] border border-white/10 text-slate-200 hover:text-white focus:outline-none"
+            >
+              {mobileMenuOpen ? <X className="w-5 h-5 text-red-400" /> : <Menu className="w-5 h-5" />}
+            </button>
+          </div>
         </div>
 
-        {/* Mobile Dropdown */}
+        {/* Mobile Fullscreen Overlay Drawer */}
         {mobileMenuOpen && (
-          <div className="xl:hidden py-4 border-t border-white/10 space-y-2">
-            {navLinks.map((item, idx) => (
-              <Link
-                key={idx}
-                to={item.path}
-                onClick={() => setMobileMenuOpen(false)}
-                className={`block py-2 text-sm font-medium ${
-                  currentPath === item.path ? 'text-red-400 font-bold' : 'text-slate-300 hover:text-red-400'
-                }`}
-              >
-                {item.label}
-              </Link>
-            ))}
+          <div className="xl:hidden fixed inset-x-0 top-[calc(4rem+1px)] sm:top-[calc(5rem+1px)] bottom-0 bg-[#07090E]/98 backdrop-blur-2xl border-t border-white/10 z-50 overflow-y-auto p-4 flex flex-col justify-between">
+            <div className="space-y-1">
+              <div className="text-[10px] uppercase tracking-wider text-slate-400 font-bold px-3 py-1 mb-1">
+                Navigation Menu
+              </div>
+              {navLinks.map((item, idx) => (
+                <Link
+                  key={idx}
+                  to={item.path}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className={`flex items-center justify-between px-3.5 py-3 rounded-xl text-sm font-semibold transition-all ${
+                    currentPath === item.path 
+                      ? 'bg-red-950/60 text-red-400 border border-red-500/40' 
+                      : 'text-slate-200 hover:bg-white/5'
+                  }`}
+                >
+                  <span>{item.label}</span>
+                  <ArrowRight className="w-3.5 h-3.5 text-slate-400" />
+                </Link>
+              ))}
+            </div>
             
-            <div className="pt-3 flex flex-col gap-2">
+            <div className="pt-6 pb-20 border-t border-white/10 mt-6 flex flex-col gap-3">
               <Link 
                 to="/apply"
                 onClick={() => setMobileMenuOpen(false)}
-                className="w-full py-2.5 bg-red-600 hover:bg-red-700 text-white font-bold rounded-lg text-xs text-center shadow-lg shadow-red-900/30 block"
+                className="w-full py-3.5 bg-gradient-to-r from-red-600 to-rose-700 text-white font-bold rounded-xl text-xs text-center shadow-lg shadow-red-900/40 block"
               >
-                Apply Online 2025
+                Apply Online for 2025 Intake
               </Link>
               <a 
                 href="https://wa.me/923000000000" 
-                className="w-full py-2.5 bg-slate-800 border border-slate-700 text-slate-200 font-semibold rounded-lg text-xs text-center flex items-center justify-center gap-2"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full py-3 bg-[#141B26] border border-white/10 text-slate-200 font-semibold rounded-xl text-xs text-center flex items-center justify-center gap-2"
               >
                 <MessageSquare className="w-4 h-4 text-emerald-400" />
-                Chat on WhatsApp (+92 300 0000000)
+                <span>Chat on WhatsApp (+92 300 0000000)</span>
               </a>
             </div>
           </div>

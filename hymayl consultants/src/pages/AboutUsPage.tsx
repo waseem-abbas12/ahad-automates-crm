@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import { ShieldCheck, Award, Building2, MapPin, Users2, CheckCircle2, FileBadge2 } from 'lucide-react';
 import { Link } from '../context/RouterContext';
 
@@ -62,7 +62,7 @@ export const AboutUsPage: React.FC = () => {
         </div>
 
         {/* Official Authorizations Section */}
-        <div className="p-8 sm:p-10 rounded-3xl bg-[#0F141C] border border-white/10 mb-16">
+        <div className="p-5 sm:p-8 md:p-10 rounded-2xl sm:rounded-3xl bg-[#0F141C] border border-white/10 mb-16">
           <div className="flex items-start gap-4 mb-8">
             <div className="w-12 h-12 rounded-xl bg-red-950/60 border border-red-500/30 flex items-center justify-center text-red-400 flex-shrink-0">
               <FileBadge2 className="w-6 h-6" />

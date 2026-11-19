@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import { Send, CheckCircle2, ShieldCheck, ArrowRight, UploadCloud } from 'lucide-react';
 import { Link } from '../context/RouterContext';
 
@@ -53,7 +53,7 @@ export const ApplyOnlinePage: React.FC = () => {
         </div>
 
         {/* Application Card */}
-        <div className="bg-[#0F141C] p-8 sm:p-10 rounded-3xl border border-white/10 shadow-2xl">
+        <div className="bg-[#0F141C] p-4 sm:p-8 md:p-10 rounded-2xl sm:rounded-3xl border border-white/10 shadow-2xl">
           <form onSubmit={handleApply} className="space-y-6">
             
             {/* Step 1: Personal Info */}
@@ -70,7 +70,7 @@ export const ApplyOnlinePage: React.FC = () => {
                     placeholder="e.g. Fatima Zahra"
                     value={formData.name}
                     onChange={e => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full bg-[#141B26] border border-white/10 rounded-xl px-4 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-red-500"
+                    className="w-full bg-[#141B26] border border-white/10 rounded-xl px-4 py-3 sm:py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-red-500"
                   />
                 </div>
                 <div>
@@ -81,7 +81,7 @@ export const ApplyOnlinePage: React.FC = () => {
                     placeholder="e.g. Muhammad Zahid"
                     value={formData.guardian}
                     onChange={e => setFormData({ ...formData, guardian: e.target.value })}
-                    className="w-full bg-[#141B26] border border-white/10 rounded-xl px-4 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-red-500"
+                    className="w-full bg-[#141B26] border border-white/10 rounded-xl px-4 py-3 sm:py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-red-500"
                   />
                 </div>
                 <div>
@@ -92,7 +92,7 @@ export const ApplyOnlinePage: React.FC = () => {
                     placeholder="0300-1234567"
                     value={formData.whatsapp}
                     onChange={e => setFormData({ ...formData, whatsapp: e.target.value })}
-                    className="w-full bg-[#141B26] border border-white/10 rounded-xl px-4 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-red-500"
+                    className="w-full bg-[#141B26] border border-white/10 rounded-xl px-4 py-3 sm:py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-red-500"
                   />
                 </div>
                 <div>
@@ -103,7 +103,7 @@ export const ApplyOnlinePage: React.FC = () => {
                     placeholder="e.g. Lahore / Rawalpindi"
                     value={formData.city}
                     onChange={e => setFormData({ ...formData, city: e.target.value })}
-                    className="w-full bg-[#141B26] border border-white/10 rounded-xl px-4 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-red-500"
+                    className="w-full bg-[#141B26] border border-white/10 rounded-xl px-4 py-3 sm:py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-red-500"
                   />
                 </div>
               </div>
@@ -123,7 +123,7 @@ export const ApplyOnlinePage: React.FC = () => {
                     placeholder="e.g. 840/1100 or 76%"
                     value={formData.fscMarks}
                     onChange={e => setFormData({ ...formData, fscMarks: e.target.value })}
-                    className="w-full bg-[#141B26] border border-white/10 rounded-xl px-4 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-red-500"
+                    className="w-full bg-[#141B26] border border-white/10 rounded-xl px-4 py-3 sm:py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-red-500"
                   />
                 </div>
                 <div>
@@ -134,7 +134,7 @@ export const ApplyOnlinePage: React.FC = () => {
                     placeholder="e.g. 88%"
                     value={formData.matricMarks}
                     onChange={e => setFormData({ ...formData, matricMarks: e.target.value })}
-                    className="w-full bg-[#141B26] border border-white/10 rounded-xl px-4 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-red-500"
+                    className="w-full bg-[#141B26] border border-white/10 rounded-xl px-4 py-3 sm:py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-red-500"
                   />
                 </div>
                 <div>
@@ -142,7 +142,7 @@ export const ApplyOnlinePage: React.FC = () => {
                   <select
                     value={formData.mdcat}
                     onChange={e => setFormData({ ...formData, mdcat: e.target.value })}
-                    className="w-full bg-[#141B26] border border-white/10 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-red-500"
+                    className="w-full bg-[#141B26] border border-white/10 rounded-xl px-4 py-3 sm:py-2.5 text-xs text-white focus:outline-none focus:border-red-500"
                   >
                     <option value="Passed 55%+">Passed (55%+)</option>
                     <option value="Awaiting Result">Awaiting Result / Appearing 2025</option>
@@ -163,7 +163,7 @@ export const ApplyOnlinePage: React.FC = () => {
                   <select
                     value={formData.program}
                     onChange={e => setFormData({ ...formData, program: e.target.value })}
-                    className="w-full bg-[#141B26] border border-white/10 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-red-500"
+                    className="w-full bg-[#141B26] border border-white/10 rounded-xl px-4 py-3 sm:py-2.5 text-xs text-white focus:outline-none focus:border-red-500"
                   >
                     <option value="MBBS (English Medium)">MBBS (English Medium)</option>
                     <option value="BDS Dentistry">BDS (Dentistry)</option>
@@ -177,7 +177,7 @@ export const ApplyOnlinePage: React.FC = () => {
                   <select
                     value={formData.preferredUniv}
                     onChange={e => setFormData({ ...formData, preferredUniv: e.target.value })}
-                    className="w-full bg-[#141B26] border border-white/10 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-red-500"
+                    className="w-full bg-[#141B26] border border-white/10 rounded-xl px-4 py-3 sm:py-2.5 text-xs text-white focus:outline-none focus:border-red-500"
                   >
                     <option value="Shihezi University">Shihezi University (MOE)</option>
                     <option value="Ningxia Medical University">Ningxia Medical University (NXMU)</option>
@@ -193,7 +193,7 @@ export const ApplyOnlinePage: React.FC = () => {
                   <select
                     value={formData.intake}
                     onChange={e => setFormData({ ...formData, intake: e.target.value })}
-                    className="w-full bg-[#141B26] border border-white/10 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-red-500"
+                    className="w-full bg-[#141B26] border border-white/10 rounded-xl px-4 py-3 sm:py-2.5 text-xs text-white focus:outline-none focus:border-red-500"
                   >
                     <option value="March 2025 (Spring)">March 2025 (Spring Intake)</option>
                     <option value="September 2025 (Fall)">September 2025 (Fall Intake)</option>

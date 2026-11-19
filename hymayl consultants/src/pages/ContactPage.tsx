@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import { Phone, Mail, MapPin, Clock, MessageSquare, Send, CheckCircle2 } from 'lucide-react';
 import { Link } from '../context/RouterContext';
 
@@ -108,7 +108,7 @@ export const ContactPage: React.FC = () => {
           </div>
 
           {/* Right Column: Contact & Booking Form */}
-          <div className="lg:col-span-6 bg-[#0F141C] p-8 rounded-3xl border border-white/10">
+          <div className="lg:col-span-6 bg-[#0F141C] p-5 sm:p-8 rounded-2xl sm:rounded-3xl border border-white/10">
             <h3 className="brand-font text-2xl font-bold text-white mb-2">Book a 1-on-1 Counseling Session</h3>
             <p className="text-xs text-slate-300 mb-6">
               Fill out your details to receive an official fee estimate and PM&DC eligibility assessment via WhatsApp.
@@ -123,7 +123,7 @@ export const ContactPage: React.FC = () => {
                   placeholder="e.g. Dr. Muhammad Ahmed"
                   value={formData.name}
                   onChange={e => setFormData({ ...formData, name: e.target.value })}
-                  className="w-full bg-[#141B26] border border-white/10 rounded-xl px-4 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-red-500"
+                  className="w-full bg-[#141B26] border border-white/10 rounded-xl px-4 py-3 sm:py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-red-500"
                 />
               </div>
 
@@ -136,7 +136,7 @@ export const ContactPage: React.FC = () => {
                     placeholder="0300-1234567"
                     value={formData.phone}
                     onChange={e => setFormData({ ...formData, phone: e.target.value })}
-                    className="w-full bg-[#141B26] border border-white/10 rounded-xl px-4 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-red-500"
+                    className="w-full bg-[#141B26] border border-white/10 rounded-xl px-4 py-3 sm:py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-red-500"
                   />
                 </div>
                 <div>
@@ -147,7 +147,7 @@ export const ContactPage: React.FC = () => {
                     placeholder="e.g. Lahore, Islamabad, Multan"
                     value={formData.city}
                     onChange={e => setFormData({ ...formData, city: e.target.value })}
-                    className="w-full bg-[#141B26] border border-white/10 rounded-xl px-4 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-red-500"
+                    className="w-full bg-[#141B26] border border-white/10 rounded-xl px-4 py-3 sm:py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-red-500"
                   />
                 </div>
               </div>
@@ -158,7 +158,7 @@ export const ContactPage: React.FC = () => {
                   <select
                     value={formData.program}
                     onChange={e => setFormData({ ...formData, program: e.target.value })}
-                    className="w-full bg-[#141B26] border border-white/10 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-red-500"
+                    className="w-full bg-[#141B26] border border-white/10 rounded-xl px-4 py-3 sm:py-2.5 text-xs text-white focus:outline-none focus:border-red-500"
                   >
                     <option value="MBBS">MBBS in China (English)</option>
                     <option value="BDS">BDS Dentistry</option>
@@ -174,7 +174,7 @@ export const ContactPage: React.FC = () => {
                     placeholder="e.g. 74% or Pre-Medical"
                     value={formData.marks}
                     onChange={e => setFormData({ ...formData, marks: e.target.value })}
-                    className="w-full bg-[#141B26] border border-white/10 rounded-xl px-4 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-red-500"
+                    className="w-full bg-[#141B26] border border-white/10 rounded-xl px-4 py-3 sm:py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-red-500"
                   />
                 </div>
               </div>
@@ -186,7 +186,7 @@ export const ContactPage: React.FC = () => {
                   placeholder="Ask about specific university, hostel, or PM&DC NOC..."
                   value={formData.message}
                   onChange={e => setFormData({ ...formData, message: e.target.value })}
-                  className="w-full bg-[#141B26] border border-white/10 rounded-xl px-4 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-red-500"
+                  className="w-full bg-[#141B26] border border-white/10 rounded-xl px-4 py-3 sm:py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-red-500"
                 />
               </div>
 

@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import { Stethoscope, Award, Laptop, Users2, CheckCircle2, ArrowRight, ShieldCheck } from 'lucide-react';
 import { Link } from '../context/RouterContext';
 
@@ -29,7 +29,7 @@ export const CareerLicensingPage: React.FC = () => {
         </div>
 
         {/* Medical Licensing Track */}
-        <div className="p-8 sm:p-10 rounded-3xl bg-[#0F141C] border border-white/10 mb-12">
+        <div className="p-5 sm:p-8 md:p-10 rounded-2xl sm:rounded-3xl bg-[#0F141C] border border-white/10 mb-12">
           <div className="flex items-start gap-4 mb-6">
             <div className="w-12 h-12 rounded-xl bg-red-950/60 border border-red-500/30 flex items-center justify-center text-red-400 flex-shrink-0">
               <Stethoscope className="w-6 h-6" />
@@ -97,7 +97,7 @@ export const CareerLicensingPage: React.FC = () => {
         </div>
 
         {/* 1-on-1 Alumni Mentorship */}
-        <div className="p-8 sm:p-10 rounded-3xl bg-gradient-to-r from-[#141B26] to-[#0F141C] border border-red-500/30 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="p-5 sm:p-8 md:p-10 rounded-2xl sm:rounded-3xl bg-gradient-to-r from-[#141B26] to-[#0F141C] border border-red-500/30 flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="space-y-2">
             <h3 className="text-xl font-bold text-white">
               Connect with a Senior Pakistani Doctor Who Graduated from China

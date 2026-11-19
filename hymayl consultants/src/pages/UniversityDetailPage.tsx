@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import { UNIVERSITIES, RMB_TO_PKR_RATE } from '../data/universities';
 import { MapPin, ShieldCheck, CheckCircle2, Bed, ArrowLeft, ArrowRight, MessageSquare, Building2, HelpCircle } from 'lucide-react';
 import { Link, useRouter } from '../context/RouterContext';
@@ -142,25 +142,25 @@ export const UniversityDetailPage: React.FC<{ universityId: string }> = ({ unive
               </div>
 
               <div className="space-y-3">
-                <div className="p-4 rounded-xl bg-[#141B26] flex items-center justify-between text-xs">
+                <div className="p-4 rounded-xl bg-[#141B26] flex flex-col sm:flex-row sm:items-center justify-between gap-1 sm:gap-4 text-xs">
                   <span className="text-slate-300 font-medium">Annual Tuition Fee:</span>
                   <span className="font-bold text-white text-sm">
                     {currency === 'PKR' ? `₨ ${(tuitionPKR / 100000).toFixed(2)} Lakhs / yr` : `¥${univ.tuitionFeeRMB.toLocaleString()} RMB / yr`}
                   </span>
                 </div>
-                <div className="p-4 rounded-xl bg-[#141B26] flex items-center justify-between text-xs">
+                <div className="p-4 rounded-xl bg-[#141B26] flex flex-col sm:flex-row sm:items-center justify-between gap-1 sm:gap-4 text-xs">
                   <span className="text-slate-300 font-medium">Hostel Accommodation (2-Person Room, AC, Heated, Wi-Fi):</span>
                   <span className="font-bold text-white text-sm">
                     {currency === 'PKR' ? `₨ ${(hostelPKR / 100000).toFixed(2)} Lakhs / yr` : `¥${univ.hostelFeeRMB.toLocaleString()} RMB / yr`}
                   </span>
                 </div>
-                <div className="p-4 rounded-xl bg-[#141B26] flex items-center justify-between text-xs">
+                <div className="p-4 rounded-xl bg-[#141B26] flex flex-col sm:flex-row sm:items-center justify-between gap-1 sm:gap-4 text-xs">
                   <span className="text-slate-300 font-medium">Medical Insurance (Annual Comprehensive):</span>
                   <span className="font-bold text-white text-sm">
                     {currency === 'PKR' ? `₨ 31,600 / yr` : `¥800 RMB / yr`}
                   </span>
                 </div>
-                <div className="p-4 rounded-xl bg-[#141B26] flex items-center justify-between text-xs">
+                <div className="p-4 rounded-xl bg-[#141B26] flex flex-col sm:flex-row sm:items-center justify-between gap-1 sm:gap-4 text-xs">
                   <span className="text-slate-300 font-medium">Residence Permit / Visa Extension (Annual):</span>
                   <span className="font-bold text-white text-sm">
                     {currency === 'PKR' ? `₨ 15,800 / yr` : `¥400 RMB / yr`}

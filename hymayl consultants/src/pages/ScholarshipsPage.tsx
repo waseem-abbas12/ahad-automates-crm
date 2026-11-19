@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import { Award, CheckCircle2, AlertTriangle, ArrowRight, BookOpen, GraduationCap, DollarSign } from 'lucide-react';
 import { Link } from '../context/RouterContext';
 
@@ -93,7 +93,7 @@ export const ScholarshipsPage: React.FC = () => {
         </div>
 
         {/* Warning Section */}
-        <div className="p-8 rounded-2xl bg-[#0F141C] border border-red-500/30 mb-16 flex items-start gap-5">
+        <div className="p-5 sm:p-8 rounded-2xl bg-[#0F141C] border border-red-500/30 mb-16 flex flex-col sm:flex-row items-start gap-4 sm:gap-5">
           <div className="w-12 h-12 rounded-xl bg-red-950/60 border border-red-500/30 flex items-center justify-center flex-shrink-0 text-red-400">
             <AlertTriangle className="w-6 h-6" />
           </div>
