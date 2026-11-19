@@ -1,5 +1,6 @@
 ﻿import React from 'react';
-import { Phone, Mail, MapPin, ShieldCheck, MessageSquare, ArrowUpRight, Clock } from 'lucide-react';
+import { Phone, MapPin, ShieldCheck, MessageSquare, Clock } from 'lucide-react';
+import { Link } from '../context/RouterContext';
 
 export const Footer: React.FC = () => {
   return (
@@ -10,7 +11,7 @@ export const Footer: React.FC = () => {
           
           {/* Brand Info */}
           <div className="lg:col-span-2 space-y-4">
-            <div className="flex items-center gap-3">
+            <Link to="/" className="flex items-center gap-3">
               <div className="w-12 h-12 rounded-lg overflow-hidden border border-red-500/30 bg-black flex-shrink-0">
                 <img src="/logo.png" alt="Humayl Consultants" className="w-full h-full object-contain p-0.5" />
               </div>
@@ -19,7 +20,7 @@ export const Footer: React.FC = () => {
                 <div className="text-xs font-semibold tracking-widest text-red-500 uppercase">CONSULTANTS</div>
                 <div className="text-[10px] text-slate-400">SMC (PVT) LIMITED</div>
               </div>
-            </div>
+            </Link>
 
             <p className="text-xs text-slate-300 leading-relaxed max-w-sm">
               Pakistan’s premier PM&DC-recognized overseas educational consultancy. Authorized representative for 43 MOE-listed Chinese medical universities and top C9 engineering academies.
@@ -33,13 +34,14 @@ export const Footer: React.FC = () => {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-sm font-bold text-white uppercase tracking-wider mb-4">Study Programs</h4>
+            <h4 className="text-sm font-bold text-white uppercase tracking-wider mb-4">Dedicated Pages</h4>
             <ul className="space-y-2.5">
-              <li><a href="#mbbs" className="hover:text-red-400 transition-colors">MBBS in China (English)</a></li>
-              <li><a href="#mbbs" className="hover:text-red-400 transition-colors">Dentistry (BDS in China)</a></li>
-              <li><a href="#mbbs" className="hover:text-red-400 transition-colors">AI & Computer Science</a></li>
-              <li><a href="#mbbs" className="hover:text-red-400 transition-colors">CSC Full Scholarships</a></li>
-              <li><a href="#mbbs" className="hover:text-red-400 transition-colors">March Spring Intake 2025</a></li>
+              <li><Link to="/mbbs-in-china" className="hover:text-red-400 transition-colors">MBBS in China (English)</Link></li>
+              <li><Link to="/programs" className="hover:text-red-400 transition-colors">University Directory</Link></li>
+              <li><Link to="/scholarships" className="hover:text-red-400 transition-colors">CSC Full Scholarships</Link></li>
+              <li><Link to="/admission-process" className="hover:text-red-400 transition-colors">Visa & Admission Guide</Link></li>
+              <li><Link to="/life-in-china" className="hover:text-red-400 transition-colors">Halal Food & Campus Life</Link></li>
+              <li><Link to="/career-licensing" className="hover:text-red-400 transition-colors">NLE Licensing & Careers</Link></li>
             </ul>
           </div>
 
@@ -85,17 +87,17 @@ export const Footer: React.FC = () => {
       </div>
 
       {/* Bottom Legal Bar */}
-      <div className="border-t border-white/5 bg-[#030407] py-6">
+      <div className="border-t border-white/5 bg-[#030407] py-6 mb-16 lg:mb-0">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-slate-400">
           <div>
             © {new Date().getFullYear()} Humayl Consultants SMC (Pvt) Limited. All Rights Reserved.
           </div>
           <div className="flex items-center gap-6">
-            <span>Direct University Account Transfers Only</span>
+            <Link to="/about-us" className="hover:text-red-400">About Us</Link>
             <span>•</span>
-            <a href="#trust" className="hover:text-red-400">Payment & Refund Policy</a>
+            <Link to="/contact" className="hover:text-red-400">Offices</Link>
             <span>•</span>
-            <a href="#trust" className="hover:text-red-400">Privacy & Terms</a>
+            <Link to="/apply" className="hover:text-red-400">Apply Online</Link>
           </div>
         </div>
       </div>
@@ -107,7 +109,7 @@ export const Footer: React.FC = () => {
           className="flex-1 py-3 bg-[#151C28] border border-white/10 rounded-xl text-white font-bold text-xs flex items-center justify-center gap-2 text-center"
         >
           <Phone className="w-4 h-4 text-slate-300" />
-          <span>Call Helpline</span>
+          <span>Call Office</span>
         </a>
         <a
           href="https://wa.me/923000000000?text=Assalam-o-Alaikum%20Humayl%20Team%2C%20I%20am%20interested%20in%20China%20Admissions%202025"

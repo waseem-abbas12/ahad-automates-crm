@@ -1,53 +1,79 @@
-import React from 'react';
+﻿import React from 'react';
+import { RouterProvider, useRouter } from './context/RouterContext';
 import { Header } from './components/Header';
-import { Hero } from './components/Hero';
-import { EligibilityCalculator } from './components/EligibilityCalculator';
-import { UniversityExplorer } from './components/UniversityExplorer';
-import { FourStepProcess } from './components/FourStepProcess';
-import { DbcCareerMentorship } from './components/DbcCareerMentorship';
-import { TrustVault } from './components/TrustVault';
-import { ParentFAQ } from './components/ParentFAQ';
 import { Footer } from './components/Footer';
 
-export function App() {
-  const scrollToCalculator = () => {
-    const calcElement = document.getElementById('calculator');
-    if (calcElement) {
-      calcElement.scrollIntoView({ behavior: 'smooth' });
+import { HomePage } from './pages/HomePage';
+import { MbbsChinaPage } from './pages/MbbsChinaPage';
+import { ProgramsDirectoryPage } from './pages/ProgramsDirectoryPage';
+import { UniversityDetailPage } from './pages/UniversityDetailPage';
+import { ScholarshipsPage } from './pages/ScholarshipsPage';
+import { AdmissionProcessPage } from './pages/AdmissionProcessPage';
+import { LifeInChinaPage } from './pages/LifeInChinaPage';
+import { CareerLicensingPage } from './pages/CareerLicensingPage';
+import { AboutUsPage } from './pages/AboutUsPage';
+import { ContactPage } from './pages/ContactPage';
+import { ApplyOnlinePage } from './pages/ApplyOnlinePage';
+
+function AppContent() {
+  const { currentPath } = useRouter();
+
+  // Dynamic route matcher for /university/:id
+  if (currentPath.startsWith('/university/')) {
+    const universityId = currentPath.replace('/university/', '');
+    return (
+      <div className="min-h-screen bg-[#07090E] text-slate-100 flex flex-col font-sans">
+        <Header />
+        <main className="flex-grow">
+          <UniversityDetailPage universityId={universityId} />
+        </main>
+        <Footer />
+      </div>
+    );
+  }
+
+  const renderPage = () => {
+    switch (currentPath) {
+      case '/mbbs-in-china':
+        return <MbbsChinaPage />;
+      case '/programs':
+        return <ProgramsDirectoryPage />;
+      case '/scholarships':
+        return <ScholarshipsPage />;
+      case '/admission-process':
+        return <AdmissionProcessPage />;
+      case '/life-in-china':
+        return <LifeInChinaPage />;
+      case '/career-licensing':
+        return <CareerLicensingPage />;
+      case '/about-us':
+        return <AboutUsPage />;
+      case '/contact':
+        return <ContactPage />;
+      case '/apply':
+        return <ApplyOnlinePage />;
+      case '/':
+      default:
+        return <HomePage />;
     }
   };
 
   return (
-    <div className="min-h-screen bg-[#07090E] text-slate-100 flex flex-col font-sans selection:bg-red-600 selection:text-white">
-      {/* Header with Sticky Advisory Ribbon */}
-      <Header onOpenCalculator={scrollToCalculator} />
-
-      {/* Hero Section */}
+    <div className="min-h-screen bg-[#07090E] text-slate-100 flex flex-col font-sans">
+      <Header />
       <main className="flex-grow">
-        <Hero onOpenCalculator={scrollToCalculator} />
-
-        {/* 60-Second Eligibility & Fee Calculator */}
-        <EligibilityCalculator />
-
-        {/* Verified University Explorer with Live Fee Converter */}
-        <UniversityExplorer />
-
-        {/* 4-Step Transparent Journey (CAS Standard) */}
-        <FourStepProcess />
-
-        {/* DreambigCareer Style NLE & Mentorship Hub */}
-        <DbcCareerMentorship />
-
-        {/* Institutional Trust Vault & Parent Assurance */}
-        <TrustVault />
-
-        {/* Deep Objection-Destroying FAQ */}
-        <ParentFAQ />
+        {renderPage()}
       </main>
-
-      {/* Global Footer */}
       <Footer />
     </div>
+  );
+}
+
+export function App() {
+  return (
+    <RouterProvider>
+      <AppContent />
+    </RouterProvider>
   );
 }
 
