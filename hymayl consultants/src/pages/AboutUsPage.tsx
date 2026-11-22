@@ -1,10 +1,10 @@
 import React from 'react';
-import { ShieldCheck, Award, Building2, MapPin, Users2, CheckCircle2, FileBadge2 } from 'lucide-react';
+import { ShieldCheck, Award, Building2, MapPin, Users2, CheckCircle2, FileBadge2, Sparkles, ArrowRight, HeartHandshake } from 'lucide-react';
 import { Link } from '../context/RouterContext';
 
 export const AboutUsPage: React.FC = () => {
   return (
-    <div className="py-12 bg-[#07090E] min-h-screen text-slate-100">
+    <div className="py-12 bg-[#05070B] min-h-screen text-slate-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Breadcrumb */}
@@ -16,8 +16,8 @@ export const AboutUsPage: React.FC = () => {
 
         {/* Hero */}
         <div className="max-w-3xl mb-14">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-950/40 border border-red-500/30 text-red-400 text-xs font-semibold mb-3">
-            <ShieldCheck className="w-3.5 h-3.5" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-red-950/50 border border-red-500/30 text-red-300 text-xs font-bold mb-3 shadow-ruby-subtle">
+            <ShieldCheck className="w-3.5 h-3.5 text-red-400" />
             <span>SECP Corporate Registered Educational Advisory</span>
           </div>
           <h1 className="brand-font text-3xl sm:text-5xl font-extrabold text-white mb-4">
@@ -30,8 +30,8 @@ export const AboutUsPage: React.FC = () => {
 
         {/* Vision, Mission, Principles */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
-          <div className="p-7 rounded-2xl bg-[#0F141C] border border-white/10">
-            <div className="w-10 h-10 rounded-xl bg-red-950/60 border border-red-500/30 flex items-center justify-center text-red-400 mb-4">
+          <div className="p-7 rounded-3xl bg-[#0B0F17] border border-white/10 hover:border-red-500/30 transition-all shadow-xl">
+            <div className="w-11 h-11 rounded-xl bg-red-950/70 border border-red-500/40 flex items-center justify-center text-red-400 mb-4">
               <Award className="w-5 h-5" />
             </div>
             <h3 className="text-base font-bold text-white mb-2">Our Mission</h3>
@@ -40,8 +40,8 @@ export const AboutUsPage: React.FC = () => {
             </p>
           </div>
 
-          <div className="p-7 rounded-2xl bg-[#0F141C] border border-white/10">
-            <div className="w-10 h-10 rounded-xl bg-red-950/60 border border-red-500/30 flex items-center justify-center text-red-400 mb-4">
+          <div className="p-7 rounded-3xl bg-[#0B0F17] border border-white/10 hover:border-red-500/30 transition-all shadow-xl">
+            <div className="w-11 h-11 rounded-xl bg-red-950/70 border border-red-500/40 flex items-center justify-center text-red-400 mb-4">
               <Building2 className="w-5 h-5" />
             </div>
             <h3 className="text-base font-bold text-white mb-2">Dual-Presence Power</h3>
@@ -50,8 +50,8 @@ export const AboutUsPage: React.FC = () => {
             </p>
           </div>
 
-          <div className="p-7 rounded-2xl bg-[#0F141C] border border-white/10">
-            <div className="w-10 h-10 rounded-xl bg-red-950/60 border border-red-500/30 flex items-center justify-center text-red-400 mb-4">
+          <div className="p-7 rounded-3xl bg-[#0B0F17] border border-white/10 hover:border-red-500/30 transition-all shadow-xl">
+            <div className="w-11 h-11 rounded-xl bg-red-950/70 border border-red-500/40 flex items-center justify-center text-red-400 mb-4">
               <ShieldCheck className="w-5 h-5" />
             </div>
             <h3 className="text-base font-bold text-white mb-2">Institutional Integrity</h3>
@@ -62,54 +62,68 @@ export const AboutUsPage: React.FC = () => {
         </div>
 
         {/* Official Authorizations Section */}
-        <div className="p-5 sm:p-8 md:p-10 rounded-2xl sm:rounded-3xl bg-[#0F141C] border border-white/10 mb-16">
+        <div className="p-6 sm:p-10 rounded-3xl bg-[#0B0F17] border border-white/10 mb-16 shadow-2xl">
           <div className="flex items-start gap-4 mb-8">
-            <div className="w-12 h-12 rounded-xl bg-red-950/60 border border-red-500/30 flex items-center justify-center text-red-400 flex-shrink-0">
+            <div className="w-12 h-12 rounded-2xl bg-red-950/70 border border-red-500/40 flex items-center justify-center text-red-400 flex-shrink-0">
               <FileBadge2 className="w-6 h-6" />
             </div>
             <div>
-              <h2 className="brand-font text-2xl font-bold text-white mb-1">
-                Official University Authorizations & MOUs
+              <span className="text-[10px] font-bold px-2.5 py-0.5 rounded bg-red-950 text-red-300 border border-red-500/30 uppercase tracking-wider">
+                Direct Representation
+              </span>
+              <h2 className="brand-font text-2xl font-bold text-white mt-1">
+                Official Chinese University Authorization Certificates
               </h2>
-              <p className="text-xs sm:text-sm text-slate-400">
-                Direct recruitment mandate signed by Chinese university chancellors appointing Humayl Consultants SMC (Pvt) Limited.
+              <p className="text-xs text-slate-400 mt-1">
+                Zero third-party brokers. Parents can inspect physical authorization certificates signed by university presidents in our Lahore office.
               </p>
             </div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {[
-              { name: 'Shihezi University School of Medicine', type: 'Exclusive Authorized Representative (Pakistan)', city: 'Xinjiang' },
-              { name: 'Ningxia Medical University (NXMU)', type: 'Official International Student Recruitment Partner', city: 'Yinchuan' },
-              { name: 'Zhengzhou University (ZZU)', type: 'Verified Academic Exchange Liaison', city: 'Henan' },
-              { name: 'Jinzhou Medical University (JZMU)', type: 'Direct Admission Partner (March & Fall)', city: 'Liaoning' },
-              { name: 'Wenzhou Medical University (WMU)', type: 'Dental & Medical Academic Facilitator', city: 'Zhejiang' },
-              { name: 'Xi’an Jiaotong University (XJTU)', type: 'CSC Postgraduate Candidate Screener', city: 'Shaanxi' },
-            ].map((auth, i) => (
-              <div key={i} className="p-4 rounded-xl bg-[#141B26] border border-white/5 space-y-1.5">
-                <div className="flex items-center gap-1.5 text-emerald-400 text-xs font-semibold">
-                  <CheckCircle2 className="w-3.5 h-3.5" />
-                  <span>Verified MOU</span>
-                </div>
-                <h4 className="text-sm font-bold text-white">{auth.name}</h4>
-                <div className="text-[11px] text-red-400/90">{auth.type}</div>
-                <div className="text-[10px] text-slate-400">{auth.city}, China</div>
+              {
+                univ: 'Shihezi University School of Medicine',
+                status: 'Direct Authorized Admissions Partner',
+                intake: 'Spring & Fall 2025'
+              },
+              {
+                univ: 'Ningxia Medical University (NXMU)',
+                status: 'Exclusive Pakistan Liaison Representative',
+                intake: 'March / Sept 2025'
+              },
+              {
+                univ: 'Zhengzhou University (ZZU)',
+                status: 'Authorized International Desk',
+                intake: 'September 2025'
+              },
+              {
+                univ: 'Jinzhou Medical University (JZMU)',
+                status: 'Official Regional Coordinator',
+                intake: 'March 2025 Open'
+              }
+            ].map((auth, idx) => (
+              <div key={idx} className="p-4 rounded-2xl bg-[#111622] border border-white/5 space-y-2">
+                <span className="text-[10px] font-bold text-emerald-400 bg-emerald-950/50 px-2 py-0.5 rounded border border-emerald-500/30">
+                  Verified Partner
+                </span>
+                <h4 className="text-xs font-bold text-white">{auth.univ}</h4>
+                <div className="text-[11px] text-slate-400">{auth.status}</div>
+                <div className="text-[10px] text-red-400 font-semibold">{auth.intake}</div>
               </div>
             ))}
           </div>
-        </div>
 
-        {/* Corporate Details */}
-        <div className="p-8 rounded-2xl bg-gradient-to-r from-[#141B26] to-[#0F141C] border border-white/10 flex flex-col sm:flex-row items-center justify-between gap-6">
-          <div>
-            <h3 className="text-base font-bold text-white mb-1">Corporate Verification</h3>
-            <p className="text-xs text-slate-300">
-              Humayl Consultants is incorporated under the Companies Act 2017 with the Securities and Exchange Commission of Pakistan (SECP).
-            </p>
-          </div>
-          <div className="flex items-center gap-4 text-xs">
-            <Link to="/contact" className="px-5 py-2.5 bg-red-600 hover:bg-red-700 text-white font-bold rounded-xl transition-all">
-              Visit Our Offices
+          <div className="mt-8 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div className="text-xs text-slate-300">
+              Want to see our official accreditation and legal certificates in person?
+            </div>
+            <Link
+              to="/contact"
+              className="px-6 py-3 bg-gradient-to-r from-red-600 to-rose-700 hover:from-red-500 hover:to-rose-600 text-white font-bold rounded-xl text-xs flex items-center gap-2 shadow-lg shadow-red-900/30"
+            >
+              <span>Schedule Office Visit in Lahore</span>
+              <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
         </div>

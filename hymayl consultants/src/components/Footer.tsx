@@ -1,10 +1,10 @@
 ﻿import React from 'react';
-import { Phone, MapPin, ShieldCheck, MessageSquare, Clock } from 'lucide-react';
+import { Phone, MapPin, ShieldCheck, MessageSquare, Clock, Globe2, Award, HeartHandshake } from 'lucide-react';
 import { Link } from '../context/RouterContext';
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="bg-[#05070B] border-t border-white/10 text-slate-400 text-xs pb-28 lg:pb-0">
+    <footer className="bg-[#030508] border-t border-white/[0.08] text-slate-400 text-xs pb-28 sm:pb-8">
       {/* Upper Footer Grid */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 sm:gap-10">
@@ -12,13 +12,21 @@ export const Footer: React.FC = () => {
           {/* Brand Info */}
           <div className="lg:col-span-2 space-y-4">
             <Link to="/" className="flex items-center gap-3">
-              <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-lg overflow-hidden border border-red-500/30 bg-black flex-shrink-0">
-                <img src="/logo.png" alt="Humayl Consultants" className="w-full h-full object-contain p-0.5" />
+              <div className="relative w-11 h-11 sm:w-12 sm:h-12 flex-shrink-0 rounded-xl overflow-hidden border border-red-500/40 shadow-lg shadow-red-950/40 bg-black p-0.5">
+                <div className="w-full h-full rounded-lg overflow-hidden flex items-center justify-center bg-black relative">
+                  <img 
+                    src="/logo.png" 
+                    alt="Humayl Consultants Emblem" 
+                    className="w-[125%] h-[125%] max-w-none object-cover object-[center_28%]" 
+                  />
+                </div>
               </div>
               <div>
-                <div className="brand-font text-xl font-bold tracking-wider text-white">HUMAYL</div>
-                <div className="text-xs font-semibold tracking-widest text-red-500 uppercase">CONSULTANTS</div>
-                <div className="text-[10px] text-slate-400">SMC (PVT) LIMITED</div>
+                <div className="flex items-baseline gap-1.5">
+                  <span className="brand-font text-xl font-black tracking-wider text-gradient-silver">HUMAYL</span>
+                  <span className="text-xs font-black tracking-widest text-gradient-red uppercase">CONSULTANTS</span>
+                </div>
+                <div className="text-[10px] text-slate-400 font-semibold uppercase tracking-wider">SMC (PVT) LIMITED</div>
               </div>
             </Link>
 
@@ -34,7 +42,9 @@ export const Footer: React.FC = () => {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-sm font-bold text-white uppercase tracking-wider mb-3 sm:mb-4">Dedicated Pages</h4>
+            <h4 className="text-sm font-bold text-white uppercase tracking-wider mb-3 sm:mb-4 border-b border-white/[0.08] pb-1.5">
+              Explore Pages
+            </h4>
             <ul className="space-y-2">
               <li><Link to="/mbbs-in-china" className="hover:text-red-400 transition-colors block py-0.5">MBBS in China (English)</Link></li>
               <li><Link to="/programs" className="hover:text-red-400 transition-colors block py-0.5">University Directory</Link></li>
@@ -47,7 +57,9 @@ export const Footer: React.FC = () => {
 
           {/* Pakistan Offices */}
           <div>
-            <h4 className="text-sm font-bold text-white uppercase tracking-wider mb-3 sm:mb-4">Pakistan Offices</h4>
+            <h4 className="text-sm font-bold text-white uppercase tracking-wider mb-3 sm:mb-4 border-b border-white/[0.08] pb-1.5">
+              Pakistan Centers
+            </h4>
             <div className="space-y-3">
               <div>
                 <strong className="text-white block mb-0.5">Lahore Head Office:</strong>
@@ -66,19 +78,21 @@ export const Footer: React.FC = () => {
 
           {/* China Ground Offices */}
           <div>
-            <h4 className="text-sm font-bold text-white uppercase tracking-wider mb-3 sm:mb-4">China Ground Offices</h4>
+            <h4 className="text-sm font-bold text-white uppercase tracking-wider mb-3 sm:mb-4 border-b border-white/[0.08] pb-1.5">
+              China Ground Hubs
+            </h4>
             <div className="space-y-3">
               <div>
-                <strong className="text-white block mb-0.5">Changsha Center:</strong>
+                <strong className="text-white block mb-0.5">Changsha Hub:</strong>
                 <p className="text-[11px] text-slate-400 leading-relaxed">International Student Liaison Hub, Yuelu District, Changsha, Hunan.</p>
               </div>
               <div>
-                <strong className="text-white block mb-0.5">Wuhan Office:</strong>
+                <strong className="text-white block mb-0.5">Wuhan Center:</strong>
                 <p className="text-[11px] text-slate-400 leading-relaxed">Optics Valley Sci-Tech Hub, Hongshan District, Wuhan, Hubei.</p>
               </div>
               <div className="pt-1">
-                <span className="text-[10px] px-2 py-0.5 rounded bg-emerald-950/80 text-emerald-300 border border-emerald-500/30">
-                  Airport Pickup & Wardens Active
+                <span className="text-[10px] px-2.5 py-1 rounded-full bg-emerald-950/80 text-emerald-300 border border-emerald-500/30 inline-block font-semibold">
+                  Airport Reception & Wardens Active
                 </span>
               </div>
             </div>
@@ -87,39 +101,19 @@ export const Footer: React.FC = () => {
       </div>
 
       {/* Bottom Legal Bar */}
-      <div className="border-t border-white/5 bg-[#030407] py-6">
+      <div className="border-t border-white/[0.06] bg-[#020305] py-6">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px] text-slate-400 text-center sm:text-left">
           <div>
-            © {new Date().getFullYear()} Humayl Consultants SMC (Pvt) Limited. All Rights Reserved.
+            © {new Date().getFullYear()} Humayl Consultants SMC (Pvt) Limited. All Rights Reserved. SECP Corporate Registration.
           </div>
           <div className="flex items-center justify-center gap-4">
             <Link to="/about-us" className="hover:text-red-400">About Us</Link>
             <span>•</span>
-            <Link to="/contact" className="hover:text-red-400">Offices</Link>
+            <Link to="/contact" className="hover:text-red-400">Offices & Maps</Link>
             <span>•</span>
-            <Link to="/apply" className="hover:text-red-400">Apply Online</Link>
+            <Link to="/apply" className="hover:text-red-400">Apply Online 2025</Link>
           </div>
         </div>
-      </div>
-
-      {/* Mobile Sticky Floating WhatsApp Bar with Safe Area Inset */}
-      <div className="lg:hidden fixed bottom-0 left-0 right-0 z-50 bg-[#07090E]/95 backdrop-blur-md border-t border-white/10 p-2.5 pb-[max(0.75rem,env(safe-area-inset-bottom))] flex items-center justify-between gap-2 shadow-2xl">
-        <a
-          href="tel:+923000000000"
-          className="flex-1 py-3 bg-[#141B26] border border-white/10 rounded-xl text-white font-bold text-xs flex items-center justify-center gap-2 text-center active:scale-95 transition-transform"
-        >
-          <Phone className="w-4 h-4 text-slate-300" />
-          <span>Call Office</span>
-        </a>
-        <a
-          href="https://wa.me/923000000000?text=Assalam-o-Alaikum%20Humayl%20Team%2C%20I%20am%20interested%20in%20China%20Admissions%202025"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex-1 py-3 bg-red-600 hover:bg-red-700 rounded-xl text-white font-bold text-xs flex items-center justify-center gap-2 text-center shadow-lg shadow-red-900/40 active:scale-95 transition-transform"
-        >
-          <MessageSquare className="w-4 h-4 text-emerald-300" />
-          <span>WhatsApp</span>
-        </a>
       </div>
     </footer>
   );

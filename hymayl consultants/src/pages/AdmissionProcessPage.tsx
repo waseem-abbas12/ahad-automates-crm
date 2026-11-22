@@ -1,10 +1,10 @@
 ﻿import React from 'react';
-import { FileCheck, Stamp, PlaneTakeoff, ShieldCheck, UserCheck, CheckCircle2, ArrowRight } from 'lucide-react';
+import { FileCheck, Stamp, PlaneTakeoff, ShieldCheck, UserCheck, CheckCircle2, ArrowRight, Sparkles, Building2 } from 'lucide-react';
 import { Link } from '../context/RouterContext';
 
 export const AdmissionProcessPage: React.FC = () => {
   return (
-    <div className="py-12 bg-[#07090E] min-h-screen text-slate-100">
+    <div className="py-12 bg-[#05070B] min-h-screen text-slate-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Breadcrumb */}
@@ -16,8 +16,8 @@ export const AdmissionProcessPage: React.FC = () => {
 
         {/* Hero */}
         <div className="max-w-3xl mb-14">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-950/40 border border-red-500/30 text-red-400 text-xs font-semibold mb-3">
-            <ShieldCheck className="w-3.5 h-3.5" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-red-950/50 border border-red-500/30 text-red-300 text-xs font-bold mb-3 shadow-ruby-subtle">
+            <ShieldCheck className="w-3.5 h-3.5 text-red-400" />
             <span>Complete Procedural Transparency</span>
           </div>
           <h1 className="brand-font text-3xl sm:text-5xl font-extrabold text-white mb-4">
@@ -36,7 +36,7 @@ export const AdmissionProcessPage: React.FC = () => {
               title: 'Free Profile Assessment & University Matching',
               time: 'Day 1 - 2',
               desc: 'Submit scanned copies of your Matric, FSc / A-Level results, and Passport. Our academic board evaluates your merit against official PM&DC criteria and Chinese university admission requirements.',
-              bullets: ['MDCAT status verification', 'Eligibility review for MOE English list', 'Zero registration fee']
+              bullets: ['MDCAT status verification', 'Eligibility review for MOE English list', 'Zero initial registration fee']
             },
             {
               step: 'Step 02',
@@ -61,43 +61,40 @@ export const AdmissionProcessPage: React.FC = () => {
             },
             {
               step: 'Step 05',
-              title: 'Chinese Embassy X1 Visa Stamping',
+              title: 'Chinese Embassy Visa Application (X1 Student Visa)',
               time: 'Week 4 - 5',
-              desc: 'Submission of your physical passport, JW202 form, admission notice, and medical form to the Chinese Visa Application Service Centre (Islamabad or Karachi). Standard processing time is 4 to 7 working days.',
-              bullets: ['Biometric fingerprint appointment', 'Express visa tracking', 'Parent travel visa assistance (if accompanying)']
+              desc: 'File submission at the Chinese Visa Application Service Center in Islamabad, Lahore, or Karachi with original JW202 form and admission docket. Our team conducts mock visa interview briefings.',
+              bullets: ['Complete biometric appointment setup', '100% Visa approval record', 'Parent pre-departure orientation']
             },
             {
               step: 'Step 06',
-              title: 'Pre-Departure Briefing & Currency Exchange',
-              time: '1 Week Before Flight',
-              desc: 'Comprehensive briefing held at our Lahore or Islamabad office. Guidance on packing, climate adaptation, Chinese SIM cards (eSIM/pre-activated), and telegraphic transfer / UnionPay currency exchange.',
-              bullets: ['Group flight booking discounts', 'Parent WhatsApp emergency group', 'Baggage allowance guidance']
-            },
-            {
-              step: 'Step 07',
-              title: 'Airport Reception to Dormitory Handover in China',
+              title: 'Group Flight Departure & China Airport Reception',
               time: 'Arrival Day',
-              desc: 'You are received by Humayl permanent Pakistani representatives at Beijing Capital, Shanghai Pudong, or Urumqi International Airport. Transported directly to campus, assisted with registration, room allotment, and biometric keys.',
-              bullets: ['Airport pickup & private coach transfer', 'Hostel room keys & bedding setup', 'Police registration & local SIM card']
-            },
+              desc: 'Travel in group flights with fellow Pakistani scholars. Our permanent Pakistani liaison officers receive students at Beijing, Shanghai, or Urumqi airport with dedicated private university buses.',
+              bullets: ['Direct airport reception & luggage transit', 'Biometric hostel room allocation', 'Campus registration & bank account opening']
+            }
           ].map((item, idx) => (
-            <div key={idx} className="p-6 sm:p-8 rounded-2xl bg-[#0F141C] border border-white/10 hover:border-red-500/30 transition-all">
+            <div key={idx} className="p-6 sm:p-8 rounded-3xl bg-[#0B0F17] border border-white/10 hover:border-red-500/30 transition-all shadow-xl">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
                 <div className="flex items-center gap-3">
-                  <span className="brand-font text-lg font-bold text-red-500">{item.step}:</span>
+                  <span className="text-xs font-black px-3 py-1 rounded-lg bg-red-600 text-white shadow-md">
+                    {item.step}
+                  </span>
                   <h3 className="text-base sm:text-lg font-bold text-white">{item.title}</h3>
                 </div>
-                <span className="text-xs font-bold px-3 py-1 rounded-full bg-white/5 text-slate-300 border border-white/10 self-start sm:self-auto">
+                <span className="text-xs font-bold text-red-400 bg-red-950/60 px-3 py-1 rounded-full border border-red-500/30 self-start sm:self-auto">
                   {item.time}
                 </span>
               </div>
+
               <p className="text-xs sm:text-sm text-slate-300 leading-relaxed mb-4">
                 {item.desc}
               </p>
-              <div className="flex flex-wrap gap-4 text-xs text-slate-400">
+
+              <div className="flex flex-wrap gap-2 pt-2 border-t border-white/[0.06]">
                 {item.bullets.map((b, i) => (
-                  <span key={i} className="flex items-center gap-1.5 text-slate-300">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-red-500" />
+                  <span key={i} className="text-[11px] text-slate-300 flex items-center gap-1.5 bg-[#111622] px-3 py-1 rounded-lg border border-white/5">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
                     <span>{b}</span>
                   </span>
                 ))}
@@ -107,16 +104,29 @@ export const AdmissionProcessPage: React.FC = () => {
         </div>
 
         {/* CTA */}
-        <div className="p-8 rounded-3xl bg-gradient-to-r from-[#141B26] to-[#0F141C] border border-red-500/30 text-center max-w-2xl mx-auto">
-          <h3 className="text-xl font-bold text-white mb-2">Ready to Start Your Application?</h3>
-          <p className="text-xs text-slate-300 mb-6">Our senior counselors in Lahore and Islamabad are ready to evaluate your documents today.</p>
-          <Link
-            to="/apply"
-            className="inline-flex items-center gap-2 px-8 py-3.5 bg-red-600 hover:bg-red-700 text-white font-bold rounded-xl text-xs sm:text-sm shadow-lg shadow-red-900/40"
-          >
-            <span>Start Free Evaluation</span>
-            <ArrowRight className="w-4 h-4" />
-          </Link>
+        <div className="text-center p-8 sm:p-12 rounded-3xl bg-gradient-to-r from-[#0B0F17] via-[#141B28] to-[#0B0F17] border border-white/10 shadow-2xl">
+          <h2 className="brand-font text-2xl sm:text-3xl font-extrabold text-white mb-3">
+            READY TO START YOUR APPLICATION FOR MARCH OR FALL 2025?
+          </h2>
+          <p className="text-xs sm:text-sm text-slate-300 max-w-2xl mx-auto mb-8">
+            Admissions in MOE-listed universities are allocated strictly on a first-come, first-served basis. Secure your seat today.
+          </p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <Link
+              to="/apply"
+              className="px-8 py-4 bg-gradient-to-r from-red-600 via-red-600 to-rose-700 hover:from-red-500 hover:to-rose-600 text-white font-bold rounded-xl text-xs sm:text-sm shadow-xl shadow-red-900/40 hover:shadow-ruby-glow transition-all"
+            >
+              <span>Apply Online in 60 Seconds</span>
+            </Link>
+            <a
+              href="https://wa.me/923000000000?text=Assalam-o-Alaikum%20Humayl%20Team%2C%20I%20want%20to%20start%20my%20visa%20process"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-8 py-4 bg-[#111622] hover:bg-[#161D2C] text-slate-200 hover:text-white font-semibold rounded-xl text-xs sm:text-sm border border-white/10 transition-all"
+            >
+              Consult Visa Counselor on WhatsApp
+            </a>
+          </div>
         </div>
 
       </div>
